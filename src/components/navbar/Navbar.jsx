@@ -23,10 +23,10 @@ export default function NavBar() {
             <li key={index}>
               <a
                 href="#"
-                className="relative pt-1 hover:text-orange-500 transition duration-300 
-                after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full 
-                after:h-[2px] after:bg-orange-500 after:scale-x-0 after:origin-center 
-                after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className="relative pt-1 text-white hover:text-orange-500 transition-colors duration-300 
+                  after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full 
+                  after:h-[2px] after:bg-orange-500 after:scale-x-0 after:origin-left 
+                  after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {link}
               </a>
@@ -34,9 +34,10 @@ export default function NavBar() {
           ))}
         </ul>
 
-        {/* Desktop Button */}
-        <button className="hidden md:block px-5 py-2 border-2 border-orange-500 rounded-full hover:bg-orange-500 transition text-white">
-          Descargar cv
+        {/* Desktop Button con efecto animado */}
+        <button className="hidden md:block relative overflow-hidden px-5 py-2 border-2 border-orange-500 rounded-full text-white group transition duration-300">
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Descargar cv</span>
+          <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-full"></span>
         </button>
 
         {/* Mobile Icon */}
@@ -59,15 +60,11 @@ export default function NavBar() {
                 </a>
               </li>
             ))}
-            <li className="pt-3">
-              <button className="hidden md:block relative overflow-hidden px-5 py-2 border-2 border-orange-500 rounded-full text-white group">
-              {/* Texto encima del fondo animado */}
-              <span className="relative z-10 transition-colors duration-300">Descargar cv</span>
-
-              {/* Fondo animado que se escala desde la izquierda */}
-              <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-full"></span>
+            <li className="pt-3 pb-4">
+              <button className="relative overflow-hidden w-full px-5 py-2 border-2 border-orange-500 rounded-full text-white group transition duration-300">
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Descargar cv</span>
+                <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-full"></span>
               </button>
-
             </li>
           </ul>
         </div>

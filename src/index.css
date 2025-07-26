@@ -5,3 +5,13 @@ body {
   font-family: 'Sora', sans-serif;
   background-color: #000000;
 }
+
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-10%); } /* puedes ajustar el % */
+}
+
+.animate-slide {
+  animation: slide 10s linear infinite;
+}
